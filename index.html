@@ -11,9 +11,15 @@
 <div class="wrapper">
     <header class="full-bleed bg-dark-green">
         <div class="logo">
-            <img src="images/logo.svg" alt="Whisker logo">
+            <a href="#top">
+                <img src="images/logo.svg" alt="Whisker logo">
+            </a>
         </div>
-        <nav class="main-nav">
+        <div class="hamburger-toggler">
+            <label for="hamburger">&#9776;</label>
+            <input type="checkbox" id="hamburger"/>
+        </div>
+        <nav class="main-nav" id="nav-list">
             <ul>
                 <li><a href="#advantages">Advantages</a></li>
                 <li><a href="#reviews">Reviews</a></li>
@@ -206,7 +212,7 @@
                 <div class="customer-order-list">
                     <ul>
                         <li>
-                            <label for="small-whisk-counter">Matcha whisk <b>S</b> size:</label>
+                            <label for="small-whisk-counter">Matcha whisk <b>S</b>&nbsp;size:</label>
                             <div class="dropdown-counter">
                                 <select name="whisks" id="small-whisk-counter">
                                     <option value="0">0</option>
@@ -217,7 +223,7 @@
                             </div>
                         </li>
                         <li>
-                            <label for="medium-whisk-counter">Matcha whisk <b>M</b> size:</label>
+                            <label for="medium-whisk-counter">Matcha whisk <b>M</b>&nbsp;size:</label>
                             <div class="dropdown-counter">
                                 <select name="whisks" id="medium-whisk-counter">
                                     <option value="0">0</option>
@@ -228,7 +234,7 @@
                             </div>
                         </li>
                         <li>
-                            <label for="large-whisk-counter">Matcha whisk <b>L</b> size:</label>
+                            <label for="large-whisk-counter">Matcha whisk <b>L</b>&nbsp;size:</label>
                             <div class="dropdown-counter">
                                 <select name="whisks" id="large-whisk-counter">
                                     <option value="0">0</option>
@@ -278,5 +284,6 @@
         <p class="copyrights">© 2023 Whisker Inc., USA. All rights reserved</p>
     </footer>
 </div>
+<script src="src/script.js"></script>
 </body>
 </html>

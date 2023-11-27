@@ -98,13 +98,25 @@ section {
       gap: 20px;
     }
   }
+  @include mq(sm) {
+    height: calc(100dvh - 70px);
+    padding-top: 70px;
+  }
 }
 
 header {
+  width: 100%;
   height: 70px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  .hamburger-toggler {
+    label,
+    input {
+      display: none;
+    }
+  }
 
   nav {
     display: inline-block;
@@ -129,9 +141,41 @@ header {
         }
       }
     }
+  }
 
-    @include mq(sm) {
+  @include mq(sm) {
+    z-index: 1000;
+    position: fixed;
+    flex-wrap: wrap;
+
+    .logo {
+      flex-basis: 40%;
+    }
+    .hamburger-toggler {
+      height: 70px;
+      flex-basis: 50%;
+      text-align: right;
+
+      label {
+        display: inline-block;
+        color: rgba(var(--light-green), 1);
+        font-size: 35px;
+        padding: 10px;
+      }
+    }
+    nav {
       display: none;
+      flex-basis: 100%;
+      text-align: center;
+
+      ul {
+        margin: 10px 0;
+        flex-direction: column;
+
+        li {
+          height: 40px;
+        }
+      }
     }
   }
 }
@@ -253,7 +297,6 @@ a {
     li {
       display: flex;
       flex-direction: column;
-      //justify-content: space-between;
       align-items: center;
       height: 70dvh;
       max-height: 450px;
@@ -269,7 +312,6 @@ a {
       .stars {
         margin-top: auto;
         height: 35px;
-        width: fit-content;
       }
     }
 
@@ -284,6 +326,21 @@ a {
     ul {
       li {
         min-height: unset;
+        width: 90%;
+        margin: 0 auto;
+        padding: 10px;
+
+        h3 {
+          font-size: 18px;
+        }
+
+        .stars {
+          height: 20px;
+        }
+      }
+
+      p {
+        font-size: 15px;
       }
     }
   }
@@ -309,6 +366,13 @@ a {
     }
     #third-review {
       display: none;
+    }
+  }
+  @include mq(xsm) {
+    ul {
+      p {
+        font-size: 14px;
+      }
     }
   }
 }
@@ -362,6 +426,11 @@ a {
   }
 
   @include mq(xsm) {
+    ul {
+      p {
+        display: none;
+      }
+    }
     img {
       margin-bottom: 30px;
     }
@@ -388,7 +457,7 @@ a {
     }
   }
 
-  @include mq(md) {
+  @include mq(mdt) {
     ul {
       flex-direction: column;
       gap: 20px;
@@ -524,6 +593,7 @@ a {
   margin-bottom: 10px;
 
   label {
+    align-self: center;
     flex-basis: 50%;
   }
 
@@ -541,6 +611,8 @@ a {
       font-size: 16px;
     }
     input {
+      border-radius: 10px;
+      padding-left: 10px;
       flex-basis: unset;
       height: 35px;
       font-size: 16px;

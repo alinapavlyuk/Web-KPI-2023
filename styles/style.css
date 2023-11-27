@@ -52,7 +52,7 @@
     width: 970px;
   }
 }
-@media screen and (max-width: 992px) and (orientation: portrait) {
+@media screen and (max-width: 992px) {
   .wrapper {
     width: 750px;
   }
@@ -89,12 +89,23 @@ section.prices .content {
   justify-content: center;
   gap: 20px;
 }
+@media screen and (max-width: 767px) {
+  section {
+    height: calc(100dvh - 70px);
+    padding-top: 70px;
+  }
+}
 
 header {
+  width: 100%;
   height: 70px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+header .hamburger-toggler label,
+header .hamburger-toggler input {
+  display: none;
 }
 header nav {
   display: inline-block;
@@ -116,8 +127,36 @@ header nav ul li a:hover {
   transform: scale(0.96);
 }
 @media screen and (max-width: 767px) {
+  header {
+    z-index: 1000;
+    position: fixed;
+    flex-wrap: wrap;
+  }
+  header .logo {
+    flex-basis: 40%;
+  }
+  header .hamburger-toggler {
+    height: 70px;
+    flex-basis: 50%;
+    text-align: right;
+  }
+  header .hamburger-toggler label {
+    display: inline-block;
+    color: rgba(var(--light-green), 1);
+    font-size: 35px;
+    padding: 10px;
+  }
   header nav {
     display: none;
+    flex-basis: 100%;
+    text-align: center;
+  }
+  header nav ul {
+    margin: 10px 0;
+    flex-direction: column;
+  }
+  header nav ul li {
+    height: 40px;
   }
 }
 
@@ -230,7 +269,7 @@ a {
   width: 50dvw;
   max-width: 700px;
 }
-@media screen and (max-width: 992px) and (orientation: portrait) {
+@media screen and (max-width: 992px) {
   .whisks-in-row img {
     width: 80dvw;
   }
@@ -253,16 +292,27 @@ a {
 .reviews-list ul li .stars {
   margin-top: auto;
   height: 35px;
-  width: fit-content;
 }
 .reviews-list ul p {
   text-align: start;
   font-size: 17px;
   font-weight: 300;
 }
-@media screen and (max-width: 992px) and (orientation: portrait) {
+@media screen and (max-width: 992px) {
   .reviews-list ul li {
     min-height: unset;
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px;
+  }
+  .reviews-list ul li h3 {
+    font-size: 18px;
+  }
+  .reviews-list ul li .stars {
+    height: 20px;
+  }
+  .reviews-list ul p {
+    font-size: 15px;
   }
 }
 @media screen and (max-width: 767px) {
@@ -284,6 +334,11 @@ a {
     display: none;
   }
 }
+@media screen and (max-width: 380px), (max-width:550px) and (max-height: 750px) {
+  .reviews-list ul p {
+    font-size: 14px;
+  }
+}
 
 .advantages-list ul li img {
   width: 100%;
@@ -301,7 +356,7 @@ a {
   text-align: justify;
   font-weight: 500;
 }
-@media screen and (max-width: 992px) and (orientation: portrait) {
+@media screen and (max-width: 992px) {
   .advantages-list ul li {
     max-width: 300px;
   }
@@ -317,7 +372,10 @@ a {
     border-radius: 5px;
   }
 }
-@media screen and (max-width: 380px), (max-width:800px) and (max-height: 750px) {
+@media screen and (max-width: 380px), (max-width:550px) and (max-height: 750px) {
+  .advantages-list ul p {
+    display: none;
+  }
   .advantages-list img {
     margin-bottom: 30px;
   }
@@ -463,6 +521,7 @@ a {
   margin-bottom: 10px;
 }
 .form-field label {
+  align-self: center;
   flex-basis: 50%;
 }
 .form-field input {
@@ -480,13 +539,15 @@ a {
     font-size: 16px;
   }
   .form-field input {
+    border-radius: 10px;
+    padding-left: 10px;
     flex-basis: unset;
     height: 35px;
     font-size: 16px;
     margin: 0;
   }
 }
-@media screen and (max-width: 380px), (max-width:800px) and (max-height: 750px) {
+@media screen and (max-width: 380px), (max-width:550px) and (max-height: 750px) {
   .form-field label {
     font-size: 13px;
   }
@@ -556,7 +617,7 @@ a {
     font-size: 16px;
   }
 }
-@media screen and (max-width: 380px), (max-width:800px) and (max-height: 750px) {
+@media screen and (max-width: 380px), (max-width:550px) and (max-height: 750px) {
   .customer-cart .customer-order-list ul li label {
     font-size: 14px;
   }
