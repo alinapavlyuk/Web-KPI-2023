@@ -122,19 +122,19 @@
                 <div class="tab-header">
                     <h3>Sizes</h3>
                     <div class="tab-buttons">
-                        <button class="tab-button tab-current">S</button>
-                        <button class="tab-button">M</button>
-                        <button class="tab-button">L</button>
+                        <button class="tab-button tab-current" id="small-whisk-button" onclick="changeTabs(event, 'small')">S</button>
+                        <button class="tab-button" id="medium-whisk-button" onclick="changeTabs(event, 'medium')">M</button>
+                        <button class="tab-button" id="large-whisk-button" onclick="changeTabs(event, 'large')">L</button>
                     </div>
                 </div>
                 <div class="tab-content">
                     <div class="tab-whisk-image">
-                        <img id="small-whisk-image" class="tab-current" src="images/whisks/small-whisk.png" alt="Small whisk">
-                        <img id="medium-whisk-image" class="display-none" src="images/whisks/medium-whisk.png" alt="Medium whisk">
-                        <img id="large-whisk-image" class="display-none"  src="images/whisks/large-whisk.png" alt="Large whisk">
+                        <img id="small-whisk-image" class="whisk-tab-element tab-current" src="images/whisks/whisk.png" style="width: 80%" alt="Small whisk">
+                        <img id="medium-whisk-image" class="whisk-tab-element" src="images/whisks/whisk.png" style="width: 90%"  alt="Medium whisk">
+                        <img id="large-whisk-image" class="whisk-tab-element"  src="images/whisks/whisk.png" alt="Large whisk">
                     </div>
                     <div class="tab-whisk-description">
-                        <div id="small-whisk" class="tab-whisk-text">
+                        <div id="small-whisk" class="whisk-tab-element tab-whisk-text tab-current">
                             <p><b>Size Dimensions:</b> Compact, perfect for single servings, typically 5-6 inches in
                                 length.
                                 <br>
@@ -144,7 +144,7 @@
                                 <b>Whisking Efficiency:</b> Delicately froths matcha, creating a fine layer of froth for
                                 an elegant experience.</p>
                         </div>
-                        <div id="medium-whisk" class="tab-whisk-text display-none">
+                        <div id="medium-whisk" class="whisk-tab-element tab-whisk-text">
                             <p><b>Size Dimensions:</b> Versatile size for both individuals and small groups, typically
                                 7-8 inches in length.
                                 <br>
@@ -154,7 +154,7 @@
                                 <b>Whisking Efficiency:</b> Efficiently whisks matcha, providing a balanced froth for
                                 consistent results.</p>
                         </div>
-                        <div id="large-whisk" class="tab-whisk-text display-none">
+                        <div id="large-whisk" class="whisk-tab-element tab-whisk-text">
                             <p><b>Size Dimensions:</b> Efficient for larger gatherings, typically 9-10 inches in length.
                                 <br>
                                 <b>Matcha Preparation Volume:</b> Perfect for larger events, can handle 4-6 grams of
@@ -164,9 +164,9 @@
                                 froth for larger tea bowls or gatherings.</p>
                         </div>
                         <div class="tab-price-row">
-                            <span id="small-whisk-price">$10.99</span>
-                            <span id="medium-whisk-price" class="display-none">$16.99</span>
-                            <span id="large-whisk-price" class="display-none">$20.99</span>
+                            <span id="small-whisk-price" class="whisk-tab-element tab-current">$10.99</span>
+                            <span id="medium-whisk-price" class="whisk-tab-element">$16.99</span>
+                            <span id="large-whisk-price" class="whisk-tab-element">$20.99</span>
                             <div class="buy-button">
                                 <button class="btn-mid-green tab-buy-button" onclick="location.href = '#buy';">Buy now</button>
                             </div>

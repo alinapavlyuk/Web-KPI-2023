@@ -14,10 +14,6 @@
   outline: none;
 }
 
-.display-none {
-  display: none;
-}
-
 .full-bleed {
   box-shadow: 0 0 0 100vmax var(--bg-color);
   clip-path: inset(0 -100vmax);
@@ -119,7 +115,7 @@ header {
   }
 
   nav {
-    display: inline-block;
+    display: inline-block !important;
     vertical-align: top;
 
     ul {
@@ -413,6 +409,7 @@ a {
 
   @include mq(sm) {
     ul {
+      gap: 5px !important;
       li {
         h3 {
           font-size: 17px;
@@ -469,6 +466,14 @@ a {
   }
 }
 
+.whisk-tab-element {
+  display: none;
+}
+
+.tab-current {
+  display: unset;
+}
+
 .sizes-tab {
   max-width: 800px;
   color: rgba(var(--mid-green), 1);
@@ -519,7 +524,11 @@ a {
   }
 
   .tab-content {
+    height: 50vh;
     .tab-whisk-image {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       flex-basis: 33%;
       background-color: rgba(var(--gray), 0.3);
 
@@ -560,6 +569,7 @@ a {
   @include mq(sm) {
     max-width: 300px;
     .tab-content {
+      height: 40vh;
       .tab-whisk-image {
         display: none;
       }
